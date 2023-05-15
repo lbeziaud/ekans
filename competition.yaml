@@ -1,0 +1,53 @@
+version: 2
+title: EKANS
+description: Kcatta rednu smhtiroglA noitazitiNaS
+image: logo.png
+terms: pages/terms.md
+docker_image: "ghcr.io/lbeziaud/docker-tapas:main"
+pages:
+  - title: Welcome
+    file: pages/welcome.md
+phases:
+  - name: Main
+    start: '2023-01-01'
+    tasks:
+      - 0
+tasks:
+  - index: 0
+    name: MIA-Raw-KernelDensity
+    scoring_program: scoring_program
+    ingestion_program: ingestion_program
+    input_data: input_data
+solutions:
+  - index: 0
+    path: solution_example
+    tasks:
+      - 0
+leaderboards:
+  - title: Results
+    key: main
+    columns:
+      - title: Accuracy
+        key: accuracy
+        index: 0
+        sorting: desc
+      - title: TPR
+        key: true_positive_rate
+        index: 1
+        sorting: desc
+      - title: FPR
+        key: false_positive_rate
+        index: 2
+        sorting: desc
+      - title: MIA advantage
+        key: mia_advantage
+        index: 3
+        sorting: desc
+      - title: Privacy gain
+        key: privacy_gain
+        index: 4
+        sorting: desc
+      - title: AUC
+        key: auc
+        index: 5
+        sorting: desc

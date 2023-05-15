@@ -1,0 +1,5 @@
+numpy
+pandas
+pyarrow
+joblib
+git+https://github.com/alan-turing-institute/privacy-sdg-toolbox.git#egg=tapas
